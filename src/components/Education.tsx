@@ -18,22 +18,14 @@ const Education: React.FC = () => {
     },
     {
       id: '2',
-      institution: 'State University',
-      degree: 'Bachelor of Science',
-      field: 'Information Technology',
-      startYear: 2014,
-      endYear: 2018,
-      description: 'Comprehensive study of programming fundamentals, database systems, and software development methodologies.',
-    },
-    {
-      id: '3',
-      institution: 'Tech Institute',
-      degree: 'Certificate',
-      field: 'Full Stack Web Development',
+      institution: 'ABU Matric Higher Secondary School',
+      degree: 'Higher Secondary',
+      field: 'Biology Maths',
       startYear: 2020,
-      endYear: 2021,
-      description: 'Intensive bootcamp covering modern web development technologies including React, Node.js, and cloud deployment.',
+      endYear: 2022,
+      description: 'Comprehensive Study About Biology.',
     },
+
   ];
 
   // Animation variants

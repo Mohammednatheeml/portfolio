@@ -133,7 +133,7 @@ const About: React.FC = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full opacity-20 blur-3xl"></div>
               <img
-                src="https://i.ibb.co/1J7z37Vn/MY-IMAGE.jpg"
+                src="https://i.ibb.co/9mDMSRP7/MY-IMAGE.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover rounded-full border-4 border-white/20 shadow-2xl relative z-10"
               />
@@ -151,3 +151,4 @@ const About: React.FC = () => {
 };
 
 export default About;
+

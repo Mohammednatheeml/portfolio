@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { useTheme } from '../contexts/ThemeContext';
+import React, { useEffect, useRef } from "react";
+import { useTheme } from "../contexts/ThemeContext";
 
 const NeonGradientBackground: React.FC = () => {
   const { isDark } = useTheme();
@@ -16,19 +16,19 @@ const NeonGradientBackground: React.FC = () => {
       }
 
       if (particlesRef.current) {
-        particlesRef.current.innerHTML = '';
+        particlesRef.current.innerHTML = "";
       }
 
       timeoutId = setTimeout(() => {
         if (particlesRef.current) {
-          const canvas = document.createElement('canvas');
-          canvas.id = 'neon-particles-canvas';
-          canvas.style.position = 'absolute';
-          canvas.style.top = '0';
-          canvas.style.left = '0';
-          canvas.style.width = '100%';
-          canvas.style.height = '100%';
-          canvas.style.pointerEvents = 'none';
+          const canvas = document.createElement("canvas");
+          canvas.id = "neon-particles-canvas";
+          canvas.style.position = "absolute";
+          canvas.style.top = "0";
+          canvas.style.left = "0";
+          canvas.style.width = "100%";
+          canvas.style.height = "100%";
+          canvas.style.pointerEvents = "none";
 
           particlesRef.current.appendChild(canvas);
           initCustomParticles(canvas);
@@ -45,12 +45,21 @@ const NeonGradientBackground: React.FC = () => {
   }, [isDark]);
 
   const initCustomParticles = (canvas: HTMLCanvasElement) => {
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationId: number;
     const particles = [];
-    const colors = ['#ff00cc', '#00ffcc', '#cc00ff', '#ffcc00', '#00ccff', '#ff3366', '#ccff00', '#ff6600', '#39ff14', '#00ffff'];
+    const colors = [
+      "#ff00cc",
+      "#00ffcc",
+      "#cc00ff",
+      "#ffcc00",
+      "#00ccff",
+      "#ff3366",
+      "#ccff00",
+      "#ff6600",
+    ];
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -59,7 +68,7 @@ const NeonGradientBackground: React.FC = () => {
 
     const createParticles = () => {
       particles.length = 0;
-      for (let i = 0; i < 140; i++) {
+      for (let i = 0; i < 120; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
@@ -68,7 +77,7 @@ const NeonGradientBackground: React.FC = () => {
           size: Math.random() * 4 + 2,
           color: colors[Math.floor(Math.random() * colors.length)],
           opacity: Math.random() * 0.8 + 0.2,
-          opacityDirection: Math.random() > 0.5 ? 1 : -1
+          opacityDirection: Math.random() > 0.5 ? 1 : -1,
         });
       }
     };
@@ -89,7 +98,7 @@ const NeonGradientBackground: React.FC = () => {
         ctx.save();
         ctx.globalAlpha = p1.opacity;
         ctx.fillStyle = p1.color;
-        ctx.shadowBlur = 40;
+        ctx.shadowBlur = 30;
         ctx.shadowColor = p1.color;
         ctx.beginPath();
         ctx.arc(p1.x, p1.y, p1.size, 0, Math.PI * 2);
@@ -105,7 +114,7 @@ const NeonGradientBackground: React.FC = () => {
             if (dist < 150) {
               ctx.save();
               ctx.globalAlpha = (1 - dist / 150) * 0.4;
-              ctx.strokeStyle = '#00ffff'; // neon cyan link
+              ctx.strokeStyle = "#00ffff"; // cyan link color
               ctx.lineWidth = 0.5;
               ctx.beginPath();
               ctx.moveTo(p1.x, p1.y);
@@ -129,13 +138,13 @@ const NeonGradientBackground: React.FC = () => {
       createParticles();
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     particlesInstanceRef.current = {
       destroy: () => {
         cancelAnimationFrame(animationId);
-        window.removeEventListener('resize', handleResize);
-      }
+        window.removeEventListener("resize", handleResize);
+      },
     };
   };
 
@@ -146,8 +155,9 @@ const NeonGradientBackground: React.FC = () => {
         <div
           className={`absolute inset-0 transition-all duration-1000 ${
             isDark
-              ? 'bg-gradient-to-br from-black via-black to-gray-900'
-              : 'bg-gradient-to-br from-purple-100 via-blue-100 to-indigo-100'
+              ? "bg-gradient-to-br from-black via-black to-gray-900"
+              : 'bg-gradient-to-r from-purple-900 via-pink-900 to-indigo-900'
+
           }`}
         />
 
@@ -155,72 +165,54 @@ const NeonGradientBackground: React.FC = () => {
         <div
           className={`absolute inset-0 opacity-80 animate-gradient-xy ${
             isDark
-              ? 'bg-gradient-to-r from-purple-900 via-pink-900 to-indigo-900'
-              : 'bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300'
+              ? "bg-gradient-to-r from-purple-800 via-pink-700 to-indigo-800"
+              : "bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300"
           }`}
           style={{
-            backgroundSize: '400% 400%',
-            filter: 'blur(80px)',
+            backgroundSize: "400% 400%",
+            filter: "blur(80px)",
           }}
         />
 
-        {/* Neon Glows */}
+        {/* Glows */}
         <div className="absolute inset-0">
           <div
-            className={`absolute top-0 left-0 w-96 h-96 rounded-full opacity-40 animate-pulse ${
-              isDark ? 'bg-cyan-500' : 'bg-cyan-300'
+            className={`absolute top-0 left-0 w-96 h-96 rounded-full opacity-30 animate-pulse ${
+              isDark ? "bg-cyan-500" : "bg-cyan-300"
             }`}
             style={{
-              filter: 'blur(110px)',
-              transform: 'translate(-50%, -50%)',
+              filter: "blur(90px)",
+              transform: "translate(-50%, -50%)",
             }}
           />
           <div
-            className={`absolute top-0 right-0 w-80 h-80 rounded-full opacity-30 animate-pulse ${
-              isDark ? 'bg-pink-500' : 'bg-pink-300'
+            className={`absolute top-0 right-0 w-80 h-80 rounded-full opacity-20 animate-pulse ${
+              isDark ? "bg-pink-500" : "bg-pink-300"
             }`}
             style={{
-              filter: 'blur(110px)',
-              transform: 'translate(50%, -50%)',
-              animationDelay: '1s',
+              filter: "blur(90px)",
+              transform: "translate(50%, -50%)",
+              animationDelay: "1s",
             }}
           />
           <div
-            className={`absolute bottom-0 left-1/2 w-72 h-72 rounded-full opacity-30 animate-pulse ${
-              isDark ? 'bg-purple-500' : 'bg-purple-300'
+            className={`absolute bottom-0 left-1/2 w-72 h-72 rounded-full opacity-20 animate-pulse ${
+              isDark ? "bg-purple-500" : "bg-purple-300"
             }`}
             style={{
-              filter: 'blur(120px)',
-              transform: 'translate(-50%, 50%)',
-              animationDelay: '2s',
+              filter: "blur(100px)",
+              transform: "translate(-50%, 50%)",
+              animationDelay: "2s",
             }}
           />
           <div
-            className={`absolute top-1/2 left-1/2 w-64 h-64 rounded-full opacity-20 ${
-              isDark ? 'bg-indigo-500' : 'bg-indigo-300'
+            className={`absolute top-1/2 left-1/2 w-64 h-64 rounded-full opacity-10 ${
+              isDark ? "bg-indigo-500" : "bg-indigo-300"
             }`}
             style={{
-              filter: 'blur(80px)',
-              transform: 'translate(-50%, -50%)',
-              animation: 'float 6s ease-in-out infinite',
-            }}
-          />
-          <div
-            className={`absolute top-[30%] left-[20%] w-52 h-52 rounded-full opacity-25 animate-pulse ${
-              isDark ? 'bg-green-400' : 'bg-green-200'
-            }`}
-            style={{
-              filter: 'blur(100px)',
-              animationDelay: '1.5s',
-            }}
-          />
-          <div
-            className={`absolute bottom-[15%] right-[15%] w-56 h-56 rounded-full opacity-25 animate-pulse ${
-              isDark ? 'bg-yellow-400' : 'bg-yellow-200'
-            }`}
-            style={{
-              filter: 'blur(100px)',
-              animationDelay: '2.5s',
+              filter: "blur(60px)",
+              transform: "translate(-50%, -50%)",
+              animation: "float 6s ease-in-out infinite",
             }}
           />
         </div>
@@ -230,7 +222,7 @@ const NeonGradientBackground: React.FC = () => {
       <div
         ref={particlesRef}
         className="fixed inset-0 -z-30"
-        style={{ width: '100vw', height: '100vh' }}
+        style={{ width: "100vw", height: "100vh" }}
       />
 
       {/* Grid Overlay */}
@@ -238,10 +230,14 @@ const NeonGradientBackground: React.FC = () => {
         className="fixed inset-0 -z-20 opacity-10"
         style={{
           backgroundImage: `
-            linear-gradient(${isDark ? '#ffffff33' : '#00000022'} 1px, transparent 1px),
-            linear-gradient(90deg, ${isDark ? '#ffffff33' : '#00000022'} 1px, transparent 1px)
+            linear-gradient(${
+              isDark ? "#ffffff33" : "#00000022"
+            } 1px, transparent 1px),
+            linear-gradient(90deg, ${
+              isDark ? "#ffffff33" : "#00000022"
+            } 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px',
+          backgroundSize: "50px 50px",
         }}
       />
 
@@ -252,3 +248,5 @@ const NeonGradientBackground: React.FC = () => {
 };
 
 export default NeonGradientBackground;
+
+
