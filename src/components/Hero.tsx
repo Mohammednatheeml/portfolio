@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 import Typewriter from "typewriter-effect";
 import myImage from "../assets/myimage.jpg";
+import resume from "../assets/resume.pdf";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
@@ -22,10 +23,10 @@ const fadeInUp = {
 
 const Hero: React.FC = () => {
   const handleDownloadResume = () => {
-    const resumeUrl = "/resume.pdf";
+    const resumeUrl = resume;
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "John_Doe_Resume.pdf";
+    link.download = "Natheem_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
