@@ -171,7 +171,7 @@ const Projects: React.FC = () => {
       id: "3",
       title: "Weather Dashboard",
       description:
-        "A beautiful weather dashboard with interactive charts, forecasting, and location-based weather data visualization.",
+        "I built a React app where users can search any city to instantly get accurate, real-time weather information. Powered by the OpenWeather API, it displays current temperature and conditions dynamically. The app combines seamless search functionality with a clean, interactive design for an engaging user experience.",
       image:
         "https://i.ibb.co/B5BVhFDV/Screenshot-2025-08-09-202153.png",
       technologies: ["React",  "OpenWeather API",],
@@ -183,7 +183,7 @@ const Projects: React.FC = () => {
       id: "4",
       title: "Instagram clone",
       description:
-        "A comprehensive analytics platform for social media performance tracking with AI-powered insights and recommendations.",
+        "I developed a full-featured Instagram clone using the MERN stack, enabling users to create profiles, post photos, like, comment, and follow others. The app offers real-time updates with smooth, responsive design for a seamless social experience. Powered by MongoDB, Express, React, and Node.js, it handles dynamic content and user interactions effortlessly.",
       image:
         "https://i.ibb.co/tpjNSrYb/Screenshot-2025-08-09-140143.png",
       technologies: ["ReactJS","NodeJS","ExpressJS","MongoDB"],
