@@ -20,7 +20,7 @@ const Education: React.FC = () => {
       id: '2',
       institution: 'ABU Matric Higher Secondary School',
       degree: 'Higher Secondary',
-      field: 'Biology Maths',
+      field: 'Bio Maths',
       startYear: 2020,
       endYear: 2022,
       description: 'Comprehensive Study About Biology.',

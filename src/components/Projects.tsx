@@ -173,10 +173,10 @@ const Projects: React.FC = () => {
       description:
         "A beautiful weather dashboard with interactive charts, forecasting, and location-based weather data visualization.",
       image:
-        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "D3.js", "OpenWeather API", "Chart.js"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com",
+        "https://i.ibb.co/B5BVhFDV/Screenshot-2025-08-09-202153.png",
+      technologies: ["React",  "OpenWeather API",],
+      liveUrl: "https://weatherproject123.netlify.app/",
+      githubUrl: "https://github.com/Mohammednatheeml/weather-sparkle",
       featured: false,
     },
     {
@@ -195,12 +195,12 @@ const Projects: React.FC = () => {
       id: "5",
       title: "Portfolio Website",
       description:
-        "A modern, animated portfolio website built with React, Framer Motion, and Three.js for stunning 3D effects.",
+        "A dynamic and interactive portfolio website built using React.js, showcasing my skills, projects, and achievements.Integrated Vanta.js, Particle.js, and Three.js for immersive 3D backgrounds and animated effects.Used Framer Motion for smooth, modern UI transitions and animations across sections.Designed to be fully responsive, visually engaging, and optimized for performance on all devices.",
       image:
-        "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Framer Motion", "Three.js", "TypeScript"],
+        "https://i.ibb.co/LX1kBg6G/Screenshot-2025-08-09-194711.png",
+      technologies: ["React", "Framer Motion", "Tailwind CSS"],
       liveUrl: "https://natheemportfolio.netlify.app/",
-      githubUrl: "",
+      githubUrl: "https://github.com/Mohammednatheeml/portfolio",
       featured: false,
     },
     {
@@ -208,7 +208,7 @@ const Projects: React.FC = () => {
       title: "Portfolio",
       description:"A personal portfolio website built using HTML and CSS to showcase my skills, projects, and achievements.Features a clean, responsive design with well-structured sections for About, Projects, Skills, and Contact.Serves as my online presence to highlight my work and attract potential employers or clients.(My First Project)",
       image:
-        "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "https://i.ibb.co/7JHhR2zQ/Screenshot-2025-08-09-143704.png",
       technologies: ["HTML","CSS"],
       liveUrl: "https://simpleportfolio-rho.vercel.app/",
       githubUrl: "https://github.com/Mohammednatheeml/simpleportfolio",
@@ -230,7 +230,7 @@ const Projects: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"
           >
-            Featured Projects
+            Projects
           </motion.h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
