@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, X } from 'lucide-react';
-import { useScrollReveal } from '../hooks/useScrollReveal';
-import type { Project } from '../types';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, Github, X } from "lucide-react";
+import { useScrollReveal } from "../hooks/useScrollReveal";
+import type { Project } from "../types";
 
-const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ project, onClose }) => {
+const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({
+  project,
+  onClose,
+}) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -33,16 +36,16 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
             <X className="w-5 h-5" />
           </button>
         </div>
-        
+
         <div className="p-8">
           <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
             {project.title}
           </h3>
-          
+
           <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             {project.description}
           </p>
-          
+
           <div className="flex flex-wrap gap-2 mb-6">
             {project.technologies.map((tech) => (
               <span
@@ -53,7 +56,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
               </span>
             ))}
           </div>
-          
+
           <div className="flex gap-4">
             {project.liveUrl && (
               <a
@@ -66,7 +69,7 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
                 Live Demo
               </a>
             )}
-            
+
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
@@ -85,11 +88,11 @@ const ProjectModal: React.FC<{ project: Project; onClose: () => void }> = ({ pro
   );
 };
 
-const ProjectCard: React.FC<{ project: Project; onClick: () => void; delay: number }> = ({ 
-  project, 
-  onClick, 
-  delay 
-}) => {
+const ProjectCard: React.FC<{
+  project: Project;
+  onClick: () => void;
+  delay: number;
+}> = ({ project, onClick, delay }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -107,16 +110,15 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void; delay: numb
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
-      
+
       <div className="p-6">
         <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
           {project.title}
         </h3>
-        
+
         <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
           {project.description}
         </p>
-        
         <div className="flex flex-wrap gap-2">
           {project.technologies.slice(0, 3).map((tech) => (
             <span
@@ -143,63 +145,73 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
-      id: '1',
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce platform with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, inventory management, and real-time order tracking.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'TypeScript', 'Tailwind CSS'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      id: "1",
+      title: "Resume Analyzer",
+      description:
+        "Built a Flask-based Resume Analyzer that uses NLP to extract skills, education, and experience from resumes. Evaluates ATS compatibility, readability, and length to provide detailed scoring and improvement tips.Frontend in React.js ensures an interactive, user-friendly resume evaluation experience.",
+      image: "https://i.ibb.co/s9yB4C1H/Screenshot-2025-08-09-125710.png",
+      technologies: ["React", "Tailwind CSS", "Python", "NLP"],
+      liveUrl: "https://scoremyresume.netlify.app/",
+      githubUrl: "https://github.com/Mohammednatheeml/resumeanalyzer",
       featured: true,
     },
     {
-      id: '2',
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Next.js', 'Socket.io', 'MongoDB', 'React DnD', 'JWT'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      id: "2",
+      title: "Movie Recommendation System",
+      description:
+        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      image:
+        "https://i.ibb.co/qY35kZqZ/Screenshot-2025-08-09-134516.png",
+      technologies: ["React","Tailwind CSS","Python"],
+      liveUrl: "https://github.com/Mohammednatheeml/movierecommendation",
+      githubUrl: "https://github.com/Mohammednatheeml/movierecommendatione",
       featured: true,
     },
     {
-      id: '3',
-      title: 'Weather Dashboard',
-      description: 'A beautiful weather dashboard with interactive charts, forecasting, and location-based weather data visualization.',
-      image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'D3.js', 'OpenWeather API', 'Chart.js'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      id: "3",
+      title: "Weather Dashboard",
+      description:
+        "A beautiful weather dashboard with interactive charts, forecasting, and location-based weather data visualization.",
+      image:
+        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
+      technologies: ["React", "D3.js", "OpenWeather API", "Chart.js"],
+      liveUrl: "https://example.com",
+      githubUrl: "https://github.com",
       featured: false,
     },
     {
-      id: '4',
-      title: 'Social Media Analytics',
-      description: 'A comprehensive analytics platform for social media performance tracking with AI-powered insights and recommendations.',
-      image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['Vue.js', 'Python', 'TensorFlow', 'FastAPI', 'Redis'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      id: "4",
+      title: "Instagram clone",
+      description:
+        "A comprehensive analytics platform for social media performance tracking with AI-powered insights and recommendations.",
+      image:
+        "https://i.ibb.co/tpjNSrYb/Screenshot-2025-08-09-140143.png",
+      technologies: ["ReactJS","NodeJS","ExpressJS","MongoDB"],
+      liveUrl: "https://github.com/Mohammednatheeml/instagram-clone",
+      githubUrl: "https://github.com/Mohammednatheeml/instagram-clone",
       featured: true,
     },
     {
-      id: '5',
-      title: 'Portfolio Website',
-      description: 'A modern, animated portfolio website built with React, Framer Motion, and Three.js for stunning 3D effects.',
-      image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'Framer Motion', 'Three.js', 'TypeScript'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      id: "5",
+      title: "Portfolio Website",
+      description:
+        "A modern, animated portfolio website built with React, Framer Motion, and Three.js for stunning 3D effects.",
+      image:
+        "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
+      technologies: ["React", "Framer Motion", "Three.js", "TypeScript"],
+      liveUrl: "https://natheemportfolio.netlify.app/",
+      githubUrl: "",
       featured: false,
     },
     {
-      id: '6',
-      title: 'Fitness Tracking App',
-      description: 'A mobile-first fitness tracking application with workout planning, progress tracking, and social features.',
-      image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Health APIs'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      id: "6",
+      title: "Portfolio",
+      description:"A personal portfolio website built using HTML and CSS to showcase my skills, projects, and achievements.Features a clean, responsive design with well-structured sections for About, Projects, Skills, and Contact.Serves as my online presence to highlight my work and attract potential employers or clients.(My First Project)",
+      image:
+        "https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=600",
+      technologies: ["HTML","CSS"],
+      liveUrl: "https://simpleportfolio-rho.vercel.app/",
+      githubUrl: "https://github.com/Mohammednatheeml/simpleportfolio",
       featured: false,
     },
   ];
@@ -239,7 +251,7 @@ const Projects: React.FC = () => {
             className="text-center mt-12"
           >
             <a
-              href="https://github.com"
+              href="https://github.com/Mohammednatheeml"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 border-2 border-indigo-600 text-indigo-600 dark:text-indigo-400 dark:border-indigo-400 rounded-full font-semibold hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 dark:hover:text-gray-900 transition-all"
